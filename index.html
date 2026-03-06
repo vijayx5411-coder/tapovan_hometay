@@ -56,17 +56,66 @@
 </section>
 
 <!-- Booking Section -->
-<section id="booking">
-  <h2 class="section-title">Book Your Room</h2>
-  <form id="bookingForm">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="date" name="dob" placeholder="Date of Birth" required>
-    <input type="file" name="adhar" required>
-    <input type="date" name="checkin" placeholder="Check-in Date" required>
-    <input type="date" name="checkout" placeholder="Check-out Date" required>
-    <input type="number" name="guests" placeholder="Number of Guests" required>
-    <button type="submit" class="btn">Send Booking</button>
-  </form>
+<section id="booking" style="background:#f1f3f6; padding:50px 20px; font-family:'Orange Tangerine', cursive;">
+  <div style="max-width:700px; margin:auto; background:#ffffff; padding:40px; border-radius:20px; box-shadow:0 6px 30px rgba(0,0,0,0.1);">
+    
+    <h2 style="text-align:center; font-family:'Transcity', sans-serif; color:#333;">Book Your Stay</h2>
+    <p style="text-align:center; font-family:'Montserrat', sans-serif; color:#555; margin-bottom:30px;">
+      Fill in your details below and click "Send Booking Info" to confirm your booking via WhatsApp.
+    </p>
+    
+    <form id="bookingForm">
+      <!-- Name -->
+      <label for="name" style="font-family:'Montserrat', sans-serif; color:#555; display:block; margin-top:15px;">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your full name" required style="width:100%; padding:12px; margin-top:5px; border-radius:10px; border:1px solid #ccc; box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);">
+      
+      <!-- Date of Birth -->
+      <label for="dob" style="font-family:'Montserrat', sans-serif; color:#555; display:block; margin-top:15px;">Date of Birth</label>
+      <input type="date" id="dob" required style="width:100%; padding:12px; margin-top:5px; border-radius:10px; border:1px solid #ccc; box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);">
+      
+      <!-- Aadhaar -->
+      <label for="aadhaar" style="font-family:'Montserrat', sans-serif; color:#555; display:block; margin-top:15px;">Aadhaar Card Photo</label>
+      <input type="file" id="aadhaar" accept="image/*" required style="margin-top:5px;">
+      
+      <!-- Check-in -->
+      <label for="checkin" style="font-family:'Montserrat', sans-serif; color:#555; display:block; margin-top:15px;">Check-in Time</label>
+      <input type="time" id="checkin" required style="width:100%; padding:12px; margin-top:5px; border-radius:10px; border:1px solid #ccc; box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);">
+      
+      <!-- Check-out -->
+      <label for="checkout" style="font-family:'Montserrat', sans-serif; color:#555; display:block; margin-top:15px;">Check-out Time</label>
+      <input type="time" id="checkout" required style="width:100%; padding:12px; margin-top:5px; border-radius:10px; border:1px solid #ccc; box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);">
+      
+      <!-- Number of Members -->
+      <label for="members" style="font-family:'Montserrat', sans-serif; color:#555; display:block; margin-top:15px;">Number of Members</label>
+      <input type="number" id="members" min="1" required style="width:100%; padding:12px; margin-top:5px; border-radius:10px; border:1px solid #ccc; box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);">
+      
+      <!-- Submit Button -->
+      <button type="submit" style="width:100%; padding:15px; margin-top:25px; border:none; border-radius:12px; background:#ccc; color:#222; font-family:'Gondens', serif; font-size:18px; cursor:pointer; box-shadow:0 6px 15px rgba(0,0,0,0.1); transition:0.3s;">
+        Send Booking Info
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- WhatsApp Integration -->
+<script>
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let dob = document.getElementById("dob").value;
+    let aadhaar = document.getElementById("aadhaar").value.split('\\').pop(); // filename only
+    let checkin = document.getElementById("checkin").value;
+    let checkout = document.getElementById("checkout").value;
+    let members = document.getElementById("members").value;
+
+    let message = `Booking Details:%0AName: ${name}%0ADOB: ${dob}%0AAadhaar: ${aadhaar}%0ACheck-in: ${checkin}%0ACheck-out: ${checkout}%0AMembers: ${members}`;
+
+    let whatsappNumber = "919045674332"; // +91 removed for wa.me
+
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+});
+</script>
 </section>
 
 <!-- Footer -->
@@ -79,3 +128,4 @@
 </body>
 
 </html>
+
