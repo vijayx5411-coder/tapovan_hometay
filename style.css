@@ -1,0 +1,96 @@
+/* Colors & Fonts */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f0f0f5; /* January Moon effect */
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+.welcome-line {
+  font-family: 'Orange Tangerine', cursive;
+  font-size: 20px;
+}
+
+section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  font-family: 'Gondens', sans-serif;
+  background-color: #ccc;
+  color: #222;
+  padding: 10px 25px;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.btn:hover {
+  background-color: #bbb;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+.slide {
+  min-width: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.slide img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.floating-buttons {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.float-btn {
+  background-color: #ccc;
+  color: #222;
+  padding: 10px;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Gondens', sans-serif;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+footer {
+  background-color: #2d6a4f;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.call-for-food {
+  font-family: 'Gondens', sans-serif;
+  font-weight: bold;
+}
